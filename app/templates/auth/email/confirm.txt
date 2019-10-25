@@ -1,0 +1,15 @@
+Dear {{ user.username }},
+
+Welcome to our glorious Flasky site!
+
+To confirm your account (and be part of the coolest club ever) please click on the following link:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+Best Regards,
+
+Thunderbuddies Inc
+
+Note: Replies to this email address are not monitored, on the plus side,
+we're pretty sure by selecting the link you'll be blessed with a basset siting
+so what do you have to lose? 
