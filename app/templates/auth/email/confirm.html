@@ -1,0 +1,10 @@
+<p>Dearest {{ user.username }},</p>
+<p>Welcome to our glorious <b>BuddySystem</b> site!</p>
+<p>To confirm your account (and be part of the coolest club ever) please <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">click here</a>.</p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+<p>Best Regards,</p>
+<p>Thunderbuddies Inc</p>
+<p><small>Note: Replies to this email address are not monitored, on the plus side,
+        we're pretty sure by selecting the link you'll be blessed with a basset siting
+        so what do you have to lose? </small></p>
