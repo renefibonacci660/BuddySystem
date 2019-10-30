@@ -40,21 +40,10 @@ def register():
                     password=form.password.data)
         db.session.add(user)
         db.session.commit()
-        token = user.generate_confirmation_token()
-        send_email(user.email, 'Confirm Your Account Please & Thank You!', 'auth/email/confirm', user=user, token=token)
-        flash('A confirmation email has been sent to your email you have provided.')
-        return redirect(url_for('main.index'))
+        flash('You can now login!')
+        return redirect(url_for('auth.login'))
     return render_template('auth/register.html', form=form)
 
-
-@auth.route('confirm/<token>')
-@login_required
-def confirm(token):
-    if current_user.confirmed:
-        return redirect(url_for('main.index'))
-    if current_user.confirm(token):
-        db.session.commit()
-        flask('Congratulations you have confirmed your account! Yay you!')
-    else:
-        flash('Oops! Looks like your link may have expired but don\'t fret, just request another (here)')
-    return redirect(url_for('main.index'))
+@auth.route('/about')
+def about():
+    return render_template('auth/about.html')
