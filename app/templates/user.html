@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}BuddySystem - {{ user.username }}{% endblock %}
+
+{% block page_content %}
+        <div class="page-header">
+            <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=256) }}">
+            <div class="profile-header">
+                <h1 style = "font-family:Noto Sans, sans-serif;color:whitesmoke;font-weight:bold;font-size:45px;">{{ user.username }}</h1>
+    {% if user.name or user.location %}</br>
+    <p style = "font-family:Noto Sans, sans-serif;font-size:21px;color:black;">
+        {% if user.name %}{{ user.name }}{% endif %}
+        {% if user.location %}
+            from <a href="http://maps.google.com/?q={{ user.location }}" style="color:rgb(36, 86, 194)">{{ user.location }}</a>
+        {% endif %}
+    </p>
+    {% endif %}
+    {% if user.about_me %}<p style = "font-family:Noto Sans, sans-serif;font-size:21px;color:black;">{{ user.about_me }}</p>{% endif %}
+    <p style = "font-family:Noto Sans, sans-serif;font-size:16px;color:black;font-style:italic;">Member since {{ moment(user.member_since).format('L') }}. </br>
+      Last seen {{ moment(user.last_seen).fromNow() }}.</p>
+  </div>
+</div>
+{% endblock %}
