@@ -1,6 +1,6 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}BuddySystem{% endblock %}
 
 {% block head %}
 {{ super() }}
@@ -9,6 +9,14 @@
 {% endblock %}
 
 {% block navbar %}
+<style>
+        body {
+        height: 500px;
+        background-color: #1c87c9; /* For browsers that do not support gradients */
+        background-image: linear-gradient(to right, #a8c6d2, #1c87c9, #bbddea);
+        }
+      </style>
+
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -18,11 +26,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">Flasky</a>
+            <a class="navbar-brand" href="https://www.youtube.com/watch?v=39xq5AATMp4"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="20" width="20"></a>
+            <a class="navbar-brand" href="{{ url_for('main.index') }}" style = "font-family:Arial, Helvetica, sans-serif;color:whitesmoke;font-weight:bold;font-size:24px;">BuddySystem</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.index') }}" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:gray;">Home</a></li>
+                <li><a href="{{ url_for('auth.about') }}" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:gray;">About</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('main.user', username=current_user.username) }}" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:gray;">Profile</a></li>
+                {% endif %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if current_user.is_authenticated %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:gray;">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('main.edit_profile') }}" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:black;">Edit Profile</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}" style = "font-family:Arial, Helvetica, sans-serif;font-size:16px;color:black;">Log Out</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
