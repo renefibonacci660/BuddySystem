@@ -1,16 +1,25 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}BuddySystem{% endblock %}
 
 {% block page_content %}
 <div class="page-header">
-    <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
-    {% if not known %}
-    <p>Pleased to meet you!</p>
-    {% else %}
-    <p>Happy to see you again!</p>
-    {% endif %}
+    <h1 style = "font-family:Noto Sans, sans-serif;color:whitesmoke;font-weight:bold;font-size:40px;" align="center">{% if current_user.is_authenticated %}Hello {{ current_user.username }}!{% else %}{% endif %}</h1></br>
+        <a href="https://www.youtube.com/watch?v=gtdnMWMWN3o"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="224" width="224"></a>
+        <a href="https://www.youtube.com/watch?v=Thb0NHX7jc8&feature=youtu.be"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="224" width="224"></a>
+        <a href="https://www.youtube.com/watch?v=9yZNAf-aCd0"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="224" width="224"></a>
+        <a href="https://www.youtube.com/watch?v=82C-XG5lElk"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="224" width="224"></a>
+        <a href="https://www.youtube.com/watch?v=8BjthoKHXEo"><img src="https://i.imgur.com/MPUnZUm.jpg" alt="Buddy System Image" height="224" width="224"></a>
+    <h2 style="color: whitesmoke;font-family:Noto Sans, sans-serif;font-weight:bold;font-size:65px" align="center">BuddySystem</h2></br>
+    <p style="color: black;font-family:Noto Sans, sans-serif;font-size:16px;font-style: italic;" align="center">Walk safe and make a Buddy along the way!</p></div>
 </div>
-{{ wtf.quick_form(form) }}
+<p align="center" style = "font-family:Noto Sans, sans-serif;font-size:21px;font-style:italic;color:whitesmoke;">
+    We are all aware of the age old addage "There is safety in numbers." </br>
+    BuddySystem is a social betterment app; with the help of BuddySystem you will be able </br>
+    to meet a walking Buddy and safely walk from place to place and ensure you're not alone. </br>
+    BuddySystem can appeal to ALL ages and sexes.</br>
+    Whether you are trying to meet someone who may work at your same company for a regular walking Buddy</br>
+    to work, a retired socialite looking for company in afternoon walks, or a late night</br>
+    bar goer looking for a safe walk home a couple of blocks away,</br>
+    BuddySystem can be used to better your walking experience no matter what walk of life.</p>
 {% endblock %}
