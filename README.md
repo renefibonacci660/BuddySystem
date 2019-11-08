@@ -1,5 +1,5 @@
 <img src="img src=https://i.imgur.com/MPUnZUm.jpg" width="160" height=auto />
-
+![BuddySystemImg](https://i.imgur.com/MPUnZUm.jpg)
 # BuddySystem: Walk safe & make a buddy along the way!
 
 Mission: To increase the safety of the average to occasional commuter through the “safety in numbers” approach & hopefully make friends in the process.
