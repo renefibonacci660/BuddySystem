@@ -78,6 +78,19 @@ All unittests are in the `./tests` directory with the command:
 * For demonstration of functional application please click [here](https://www.youtube.com/watch?time_continue=5&v=_ymOdU2qMn0)
 * For a blogpost detailing the creation of this MVP please click [here](https://www.linkedin.com/pulse/foundation-buddysystem-brittney-rene-goertzen)
 
+## Next Iteration Plans for BuddySystem
+This is the MVP of BuddySystem & will continue to be updated. In order these are the next steps to be implemented;
+* Deployment on public URL
+* Addition of SSL Certifications
+* Utilizing Google SMTP server for user email authentication
+* Password and email reset priveleges
+* Username deletion
+* Displaying a 'To' and 'From' address box for users
+* Displaying Google Maps API results on User Page
+* Implementing Messaging System
+* Post Board of requested user walks
+* Display of walks in the area on Map
+
 ## Main Resources
 * Steven Garcia (Mentorship) [@stvngrcia](https://github.com/stvngrcia)
 * Flask Web Development by Michael Grinberg
