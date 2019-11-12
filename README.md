@@ -29,14 +29,14 @@ Use the package manager pip to install all needed packages for BuddySystem. Inst
 
 ```bash
 sudo python -m pip install –upgrade pip
-sudo pip install update
-sudo pip install flask
-sudo pip install flask-bootstrap
-sudo pip install flask-moment
-sudo pip install flask-wtf
-sudo pip install flask-sqlalchemy
-sudo pip install flask-migrate
-sudo pip install flask-mail
+sudo pip3 install update
+sudo pip3 install flask
+sudo pip3 install flask-bootstrap
+sudo pip3 install flask-moment
+sudo pip3 install flask-wtf
+sudo pip3 install flask-sqlalchemy
+sudo pip3 install flask-migrate
+sudo pip3 install flask-mail
 ```
 
 
