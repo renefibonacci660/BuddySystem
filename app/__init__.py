@@ -16,9 +16,11 @@ login_manager.login_view = 'auth.login'
 
 
 def create_app(config_name):
+    # creating an application instance (using WSGI)
+    import pdb; pdb.set_trace()
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
-    config[config_name].init_app(app)
+    app.config.from_object(config['default'])
+    config['default'].init_app(app)
 
     bootstrap.init_app(app)
     mail.init_app(app)
